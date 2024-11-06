@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'Kajiro';
+    src: url('font/kajiro/Kajiro/Kajiro Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #684219;
+    min-height: 100vh;
+}
+
+
+.navbar{
+    height: 3rem;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    max-width: 100%;
+}
+
+.collapse .navbar-nav{
+    gap: 23px;
+    margin-left: 1.5rem;
+}
+
+nav .navbar-brand img{
+    height: 3.5rem;
+    margin-left: 0.3em;
+    margin-top: 29px;
+    height: 3.3em;
+    position: sticky;
+}
+nav {
+    background-color: rgb(126 8 5);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center; 
+    height: 3.6rem;
+    z-index: 50000;
+  
+}
+.container-fluid{
+    background-color: brown;
+    padding: 0px;
+}
+
+
+nav .nav-left p {
+    margin: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    /* padding: 4px 3px; */
+}
+
+.dropdown-menu{
+    text-align: right;
+}
+
+.nav-right a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.d-flex{
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: end;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+.d-flex a {
+    padding: 24px 12px;
+    border-left: 0.3px solid rgb(183, 97, 97);
+    border-right: 0.3px solid rgb(208, 128, 128);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    transition: background-color 0.3s; /* Smooth transition */
+    letter-spacing: 0.5px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.d-flex .menu{
+    position: relative; /* Position relative to contain absolutely positioned elements */
+    /* display: flex; 
+    align-items: flex-end; 
+    justify-content: normal; Center horizontally */
+    padding: 1rem; /* Add some padding to the menu */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    width: 3.2rem; /* Set a fixed width */
+    height: 4rem; /* Set a fixed height */
+    
+}
+
+
+.d-flex .menu:hover{
+    background-color: white;
+}
+.d-flex .menu img{
+    position: absolute;
+}
+
+.default-svg {
+    z-index: 5;
+    /* transition: z-index 0.3s; Smooth transition */
+}
+
+/* Hover SVG image */
+.hover-svg{
+   z-index: 0;
+    /* transition: z-index 0.3s; Smooth transition */
+}
+
+.menu:hover .default-svg {
+    z-index: 0; /* Hide the default SVG */
+}
+
+.menu:hover .hover-svg {
+    z-index: 1; /* Show the hover SVG */
+}
+
+.d-flex .menu:hover {
+    background-color: white;
+}
+
+.d-flex a:hover{
+    background-color:rgb(116, 71, 71);
+}
+
+/* Pseudo-element for the colorful line */
+/* .nav-left a:after {
+    content : "";
+    position: absolute;
+    background-color: rgb(196, 89, 110);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.nav-left a:hover{
+    color: white;
+}
+
+/* Change line color on hover */
+/* .nav-left a:hover:after {
+    width: 100%;
+} */ 
+
+.d-flex a::after {
+    content: ""; /* Empty content for the pseudo-element */
+    display: block; /* Make it a block element */
+    height: 3px; /* Height of the line */
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.3s; /* Smooth transition for color */
+    width: 100%; /* Make it the full width of the parent */
+    position: absolute; /* Position it absolutely */
+    bottom: 1px; /* Position below the text */
+    left: 0; /* Align to the left */
+}
+
+.navbar-nav a:hover::after {
+    opacity: 1; /* Make it visible on hover */
+    background-color: var(--random-color); /* Use the random color */
+}
+
+
+/* Styles for submenu within Placement */
+.dropdown-submenu {
+    position: relative; /* Ensure the submenu is positioned relative to Placement */
+}
+
+.dropdown-submenu .dropdown-menu {
+    display: none; /* Hide submenu initially */
+    position: absolute;
+    left: 100%; /* Align the submenu to the right of the Placement item */
+    top: 0; /* Align submenu with the top of the Placement item */
+    margin-top: 0;
+}
+
+/* Show the submenu when hovering over the Placement item */
+.dropdown-submenu:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item.dropdown-toggle::after {
+    display: none; /* Hides the default Bootstrap caret */
+}
+
+.caret-right {
+    font-size: 0.7em; /* Adjusts the size of the arrow */
+    margin-left: 5px; /* Space between text and arrow */
+    transform: rotate(0deg); /* Ensures it points right */
+    transition: transform 0.3s; /* Smooth rotation on hover */
+}
+
+/* Change background color of dropdown menus */
+.dropdown-menu {
+    background-color: #ca8f5f !important; /* Dark background for dropdown */
+    border: none; /* Remove default border */
+}
+
+/* Change background color and text color for dropdown items */
+.dropdown-item {
+    color: #ffffff !important; /* Set text color for dropdown items */
+}
+
+.dropdown-item:hover {
+    background-color: white; /* Darker background on hover */
+    color: black !important; /* Text color remains white on hover */
+}
+
+.image-container{
+    transform: translateY(-4px);
+}
+
+.image-container img{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+
+.main{
+    padding-top: 4.75rem;
+    position: relative;
+}
+
+#hero{
+    position: absolute;
+    top: 18%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    /* height: 100px; */
+    pointer-events: none;
+    transform: translate(0%,-50%);
+    justify-content: space-between;
+}
+
+
+
+#heroleft{
+    min-width: 50%;
+    padding-left: 4.9rem;
+    /* height: 100px; */
+    /* background-color: yellow; */
+    
+    
+}
+
+#heroleft #const h1{
+    font-family: "kajiro";
+    line-height: .9;
+    color: white;
+    font-size: 10vw;
+    font-weight: 100;
+    top: 100%;
+    left:0;
+}
+#heroleft .elem{
+    
+    height: 5vw;
+    border-color: red;
+    z-index: 5000;
+    position: relative;
+    letter-spacing: 10px;
+}
+
+#element{
+    font-family: "kajiro";
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+    position: absolute;
+    
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox%3D%220 0 30 30%22 xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath stroke%3D%22%23ffffff%22 stroke-width%3D%222%22 d%3D%22M4 7h22M4 15h22M4 23h22%22/%3E%3C/svg%3E') !important;
+}
+
+.navbar-toggler{
+    border: 4px solid white;
+}
+
+
+#heroright{
+    min-width: 25%;
+    /* height: 100px; */
+    /* background-color: gray; */
+    
+}
+
+
+
+.desc {
+    pointer-events: none;
+    padding: 20px;
+    background-color: rgb(126 8 5); /* Brown background */
+    color: white; /* White text for contrast */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0; /* Remove margins to eliminate gaps */
+    text-align: center; /* Center align the text */
+    transform: translateY(-4px);
+}
+
+.desc h4{
+    color: #fdb714;
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 6%;
+}
+
+.desc p{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.num{
+    padding-top: 4%;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+    
+}
+
+.num h4{
+    
+    padding: 20px;
+    color: rgb(126 8 5);
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.underline {
+    width: 150px; /* Length of the underline */
+    height: 3.7px;  /* Thickness of the underline */
+    background-color: #fdb714; /* Color of the underline */
+    margin: 0 auto; /* Centers the underline */
+}
+
+/* Container styling */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10rem; /* Spacing between each stat-item */
+    margin-top: 20px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    
+    
+}
+
+/* Individual stat styling */
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 70px; /* Large size for numbers */
+    margin: 0;
+    color: #7B1F29; /* Number color */
+    font-weight: bold;
+    text-shadow: 10px 2px 0px#FFD700;
+}
+
+.stat-item p {
+    font-size: 18px; /* Smaller size for text */
+    margin: 5px 0 0; /* Small space between number and text */
+    color: #666; /* Text color */
+}
+
+
+/* Style for the Events Section Title */
+.events-section{
+    padding-bottom: 4%;
+}
+/* Style for the Events Section Title */
+.events-title {
+    font-size: 40px;
+    color: rgb(126,8,5);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-weight: 700;
+}
+
+/* Optional underline style */
+.events-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #FFD700;
+    margin: 0.5rem auto 1rem;
+}
+
+/* Container for the Events Box with reduced width */
+.events-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem; /* Adjusted gap for smaller spacing */
+    padding: 1.5rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Reduced width */
+    margin: 0 auto; /* Center align */
+}
+
+/* Style for Each Event Card with reduced width */
+.event-card {
+    flex: 1;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 370px; 
+}
+
+/* Date Style */
+.event-date {
+    font-size: 1.2rem;
+    color: #6A4A3C;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Event Description */
+.event-description h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.event-description p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+.event-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: round the corners of the image */
+    margin-bottom: 0.5rem; /* Space between image and description */
+}
+
+footer {
+    background-color: white; /* Optional background color */
+    padding: 20px; /* Add padding */
+    text-align: center; /* Center the text */
+}
+
+footer h2 {
+    margin: 10px 0; /* Margin for heading */
+}
+
+footer p {
+    margin: 5px 0; /* Margin for paragraphs */
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 45%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+}
+
+
+
+
+@media (max-width: 551px) {
+    /* nav .navbar{
+        padding-top: 0 !important;
+    }
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        width: 100%;  
+        padding-right: calc(var(--bs-gutter-x) * 0.25); 
+        padding-left: calc(var(--bs-gutter-x) * 0.25); 
+    } */
+   
+    /* .stat-item h2 {
+        font-size: 10px; 
+        margin: 0;
+        color: #7B1F29; 
+        font-weight: bold;
+        text-shadow: 10px 2px 0px#FFD700;
+    } */
+    
+    #heroleft{
+        padding-left: 1.9rem;
+    }
+
+    #hero{
+        top: 13%;
+    }
+
+    #heroleft #const h1 {
+        font-size: 22vw !important;
+    }
+    
+    #element {
+        font-size: 8vw !important;
+    }
+
+    .desc h4{
+        font-size: 30px;
+    }
+
+    .desc p{
+        font-size: 12px;
+        text-align: justify;
+        padding: 1rem 2rem;
+    }
+
+    .num h4{
+        font-size: 30px;
+    }
+
+    .stats{
+        gap: 5rem;
+    }
+
+    .stat-item h2{
+        font-size: 50px;
+    }
+    
+    nav .navbar-brand img{
+        margin-top: 10px;
+    }
+}
